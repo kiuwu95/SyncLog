@@ -12,7 +12,7 @@ int main() {
     auto& logger = Logger::getInstance();
 
     logger.setLevel(LogLevel::DEBUG);         // 可以改成INFO，观察debug日志被过滤
-    logger.setLogFile("E:\\桌面\\编程\\多线程同步日志库\\log.txt");           // 传入 "" 就关闭文件输出，只打印控制台
+    logger.setLogFile("E:\\桌面\\编程\\项目\\多线程同步日志库\\log.txt");           // 传入 "" 就关闭文件输出，只打印控制台
 
     // 启动3个线程并发打印日志
     std::thread t1(workThread, 1);
