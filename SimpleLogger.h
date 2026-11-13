@@ -39,7 +39,7 @@ public:
         // --------------------------
         // 【你在这里完成实现】
         // 1.等级过滤判断
-        if (level <= m_filterLevel) {
+        if (level < m_filterLevel) {
             return;
         }
         // 2.加锁保护整条日志
