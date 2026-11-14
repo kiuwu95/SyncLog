@@ -2,7 +2,7 @@
     "version": 8,
     "configurePresets": [
         {
-            "name": "test",
+            "name": "msvc",
             "displayName": "Visual Studio Community 2026 Release - amd64",
             "description": "将编译器用于 Visual Studio 18 2026 (x64 体系结构)",
             "generator": "Visual Studio 18 2026",
@@ -18,9 +18,9 @@
     ],
     "buildPresets": [
         {
-            "name": "test-debug",
+            "name": "msvc-debug",
             "displayName": "Visual Studio Community 2026 Release - amd64 - Debug",
-            "configurePreset": "test",
+            "configurePreset": "msvc",
             "configuration": "Debug"
         }
     ]
