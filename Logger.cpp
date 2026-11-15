@@ -39,7 +39,7 @@ void Logger::SetLogFile(const std::string& log_file) {
 
 void Logger::Start() {
     while (true) {
-        std::vector<std::string> logs{};
+        std::deque<std::string> logs{};
         {
             std::unique_lock<std::mutex> lock(mtx_);
             cv_.wait(lock, [this] {return !log_queue_.empty() || end_;});

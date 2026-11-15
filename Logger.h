@@ -4,7 +4,6 @@
 #include<iostream>
 #include<fstream>
 #include<utility>
-#include<vector>
 #include<deque>
 #include<thread>
 #include<mutex>
@@ -34,12 +33,11 @@ public:
 private:
     void Start();
 private:
-    std::vector<std::string> log_queue_;
+    std::deque<std::string> log_queue_;
     std::mutex mtx_;
     std::condition_variable cv_;
     std::unique_ptr<std::ofstream> writer_;
     std::thread writer_thread_;
-
 
     std::atomic<bool> end_ = false;
     std::atomic<size_t> producer_index_ = 0;
