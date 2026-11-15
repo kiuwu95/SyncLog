@@ -2,6 +2,7 @@
 #include<string>
 #include<sstream>
 #include<utility>
+#include<vector>
 
 #include"LEVEL.h"
 #include"GetTime.h" 
@@ -39,7 +40,7 @@ private:
 
     template<class... Args>
     static std::string StringFormatter(const std::string& str, Args&& ... args) {
-        std::vector<std::string> arr{ ArgToString<Args...>(std::forward<Args>(args)...) };
+        std::vector<std::string> arr{ ArgToString(std::forward<Args>(args))... };
 
         std::ostringstream oos;
         size_t args_index = 0, left = 0;
@@ -66,5 +67,13 @@ private:
     template<class T>
     static std::string ArgToString(T&& arg) {
         return std::to_string(std::forward<T>(arg));
+    }
+
+    static std::string ArgToString(const uint16_t& arg) {
+        return std::to_string((unsigned int)(arg));
+    }
+
+    static std::string ArgToString(const char(&arg)[]) {
+        return std::string(arg);
     }
 };
