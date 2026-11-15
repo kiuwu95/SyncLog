@@ -68,7 +68,7 @@ private:
     static std::string ArgToString(T&& arg) {
         return std::to_string(std::forward<T>(arg));
     }
-
+    //函数重载（为了应对to_string的局限性）
     static std::string ArgToString(const uint16_t& arg) {
         return std::to_string((unsigned int)(arg));
     }
